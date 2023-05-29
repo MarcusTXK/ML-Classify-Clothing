@@ -95,11 +95,7 @@ Hyperparameter tuning: We set the range of possible k values from 2 to 100 and e
 |Grayscale + Edges|n\_neighbors = 2|55\.12%|34\.54%|
 |PCA on Grayscale + Edges|n\_neighbors = 2, n\_components = 0.75|64\.71%|32\.37%|
 |LDA on Grayscale + Edges|n\_neighbors = 2 shrinkage= 0.6|84\.63%|41\.91%|
-
-
-
 |**HOG**|**n\_neighbors = 2**|**58.90%**|**44.65%**|
-| - | - | - | - |
 |SIFT|n\_neighbors = 5|52\.54%|13\.73%|
 
 **Decision Tree (DT)**
@@ -133,12 +129,7 @@ For each combination of hyperparameters, we conducted 5-fold cross validation on
 *Table 3: Results of SVM on various features*
 
 |Features|Best Hyperparameters (alpha, loss, penalty)|Best Training Results (Randomised Search Cross Validation)|Test Results|
-| - | :- | :- | - |
-
-
-
 |PCA on HOG|(0.0030461376917337067, 'hinge', l1)|57\.33%|56\.93%|
-| - | :- | - | - |
 |**LDA on HOG**|**(0.002747217929900642, 'hinge', 'l2')**|**83.49%**|**60.84%**|
 |HOG|(0.003745401188473625, 'hinge', 'elasticnet')|61\.86%|56\.94%|
 |SIFT|(0.007319939418114051, 'hinge', 'l2')|23\.09%|19\.51%|
@@ -154,17 +145,12 @@ Due to the large number of possible combinations, we first limited the search sp
 *Table 4: Results of RF on various features*
 
 |Features|<p>Best Hyperparameters</p><p>(n\_estimators, min\_samples\_split, min\_samples\_leaf,</p><p>max\_features,</p><p>max\_depth)</p><p>[PCA/LDA hyperparameters]</p>|Best Training Results (Randomised Search Cross Validation)|Test Results|
-| - | - | :- | :- |
 |PCA on Grayscale + Edges|(200, 5,1, 'max\_features': 'sqrt', 74) [n\_components = 0.99]|38\.79%|31\.80%|
 |LDA on Grayscale + Edges|50, 2, 1, 'sqrt', 89, [shrinkage = 0.8]|89\.03%|44\.36%|
 |PCA on HOG|(100, 5, 2, 'log2', 77) [n\_components = 0.7]|73\.33%|28\.90%|
 |**LDA on HOG**|**(50, 2, 1, 'sqrt',58) [shrinkage = 0.5]**|**86.82%**|**65.90%**|
 |HOG|(200, 5, 1, ‘sqrt’, 74)|57\.91%|48\.84%|
-
-
-
 |SIFT|(200, 5, 1, ‘sqrt’, 74)|43\.79%|22\.25%|
-| - | - | - | - |
 
 Our RF model was also able to produce better test F1 scores than our baseline models. **Convolutional Neural Network (CNN)**
 
