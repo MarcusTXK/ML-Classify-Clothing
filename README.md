@@ -1,10 +1,8 @@
-﻿Ong Jun Xiong (A0214943E) Marcus Tang Xin Kye (A0217934Y) Madhan Selvapandian (A0218446B) Taufiq Bin Abdul Rahman(A0218081L) See Jian Hui (A0217701N) Tay Yan Han (A0216335L)
-
-**Introduction**
+### Introduction
 
 This project proposes the development of a classification model to classify images from [Clothing Dataset Small](https://github.com/alexeygrigorev/clothing-dataset-small). The application will be designed to assist fashion retailers, fashion enthusiasts, and fashion analysts in various scenarios. The successful completion of this project will contribute to the development of visual search engines for fashion items and the improvement of inventory management systems in the fashion industry.
 
-**Use Cases**
+### Use Cases
 
 The application can be used in various scenarios, including but not limited to:
 
@@ -14,7 +12,7 @@ The application can be used in various scenarios, including but not limited to:
 - Assisting with the product search functionality on e-commerce websites
 - Improving the quality of visual search engines for fashion items
 
-**Data Understanding**
+### Data Understanding
 
 The dataset consists of various coloured images of fashion items of different sizes. There are 10 possible labels for the images: Dress, Hat, Long Sleeve, Outwear, Pants, Shirts, Shoes, Shorts, Skirt, T-shirt. Below shows the distribution of our dataset. This dataset has already been grouped into train, test and validation.
 
@@ -28,7 +26,7 @@ Observations
 1) Since we are dealing with image classification, we expect the number of dimensions for each instance to likely be high.
 1) The type of clothing is largely defined by their outlines/shape. However, there are some classes with similar shapes (eg. outwear and tshirts). Finer features on the clothing such as texture and colour intensity may be required to correctly classify some instances.
 
-**Experimentation**
+### Experimentation
 
 **Data Extraction + Preprocessing**
 
@@ -78,11 +76,11 @@ We then experimented with several different values of n\_components: [0.7, 0.75,
 
 We also experimented with LDA for feature reduction. We experimented with the different hyperparameters, solver and shrinkage for all the different models listed below and listed the best values of the hyperparameters for each model.
 
-**Performance Criteria**
+### Performance Criteria
 
 F1 Micro Score: We felt that precision and recall were both equally important in our project context, so we decided to use the harmonic mean of them as the metric for our experiments. Also, since the dataset we trained on is imbalanced, we decided to use F1 micro rather than F1 macro.
 
-**Baseline Models**
+### Baseline Models
 
 **K-Nearest Neighbours (KNN)**
 
@@ -122,7 +120,7 @@ Hyperparameter tuning: Similar to KNN, we set the range of maximum depths from 2
 
 The best baseline model we could produce was KNN with k = 24 using LDA on Grayscale + Edges as our feature variable. It obtained a test F1 score of 44.65%.
 
-**Experiments to find improved models**
+### Experiments to find improved models
 
 **Support Vector Machine (SVM)**
 
@@ -195,7 +193,7 @@ The testing f1 micro for CNN is high on 0.7542, in comparison with K-Nearest Nei
 
 *Figure 4: F1 micro score and loss as the number of epochs increases for CNN*
 
-**SOTA Model**
+### State Of The Art (SOTA) Model
 
 **Residual Neural Network (ResNet)**
 
@@ -230,32 +228,45 @@ There were a few other hyperparameters we could have tuned such as Dropout Rates
 
 **References**
 
-Clothing Dataset Small: [alexeygrigorev/clothing-dataset-small: Clothing dataset, 10 classes (github.com)](https://github.com/alexeygrigorev/clothing-dataset-small)
+* Clothing Dataset Small: [alexeygrigorev/clothing-dataset-small: Clothing dataset, 10 classes (github.com)](https://github.com/alexeygrigorev/clothing-dataset-small)
 
-Histogram of Oriented Gradients: [HOG (Histogram of Oriented Gradients): An Overview | by Mrinal Tyagi | Towards Data Science](https://towardsdatascience.com/hog-histogram-of-oriented-gradients-67ecd887675f)
+* Histogram of Oriented Gradients: [HOG (Histogram of Oriented Gradients): An Overview | by Mrinal Tyagi | Towards Data Science](https://towardsdatascience.com/hog-histogram-of-oriented-gradients-67ecd887675f)
 
-[Dalal-cvpr05.pdf (inrialpes.fr)](https://lear.inrialpes.fr/people/triggs/pubs/Dalal-cvpr05.pdf)
+* [Dalal-cvpr05.pdf (inrialpes.fr)](https://lear.inrialpes.fr/people/triggs/pubs/Dalal-cvpr05.pdf)
 
-[Feature Descriptor | Hog Descriptor Tutorial (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2019/09/feature-engineering-images-introduction-hog-feature-descriptor/)
+* [Feature Descriptor | Hog Descriptor Tutorial (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2019/09/feature-engineering-images-introduction-hog-feature-descriptor/)
 
-Scale-Invariant Feature Transform: [Introduction to SIFT( Scale Invariant Feature Transform) | by Deepanshu Tyagi | Data Breach | Medium](https://medium.com/data-breach/introduction-to-sift-scale-invariant-feature-transform-65d7f3a72d40)
+* Scale-Invariant Feature Transform: [Introduction to SIFT( Scale Invariant Feature Transform) | by Deepanshu Tyagi | Data Breach | Medium](https://medium.com/data-breach/introduction-to-sift-scale-invariant-feature-transform-65d7f3a72d40)
 
-[SIFT Algorithm | How to Use SIFT for Image Matching in Python (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2019/10/detailed-guide-powerful-sift-technique-image-matching-python/)
+* [SIFT Algorithm | How to Use SIFT for Image Matching in Python (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2019/10/detailed-guide-powerful-sift-technique-image-matching-python/)
 
-Choosing Improved Models: [ftee-2022-0046 (sciendo.com)](https://sciendo.com/pdf/10.2478/ftee-2022-0046)
+* Choosing Improved Models: [ftee-2022-0046 (sciendo.com)](https://sciendo.com/pdf/10.2478/ftee-2022-0046)
 
-[Comparative analysis of image classification algorithms based on traditional machine learning and deep learning - ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S0167865520302981)
+* [Comparative analysis of image classification algorithms based on traditional machine learning and deep learning - ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S0167865520302981)
 
-Support Vector Machines: [sklearn.linear_model.SGDClassifier — scikit-learn 1.2.2 documentation](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html)
+* Support Vector Machines: [sklearn.linear_model.SGDClassifier — scikit-learn 1.2.2 documentation](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html)
 
-[Fighting Overfitting With L1 or L2 Regularization: Which One Is Better? - neptune.ai ](https://neptune.ai/blog/fighting-overfitting-with-l1-or-l2-regularization#:~:text=The%20differences%20between%20L1%20and,regularization%20solution%20is%20non%2Dsparse.)<https://www.sciencedirect.com/science/article/abs/pii/S0167865520302981>
+* [Fighting Overfitting With L1 or L2 Regularization: Which One Is Better? - neptune.ai ](https://neptune.ai/blog/fighting-overfitting-with-l1-or-l2-regularization#:~:text=The%20differences%20between%20L1%20and,regularization%20solution%20is%20non%2Dsparse.)<https://www.sciencedirect.com/science/article/abs/pii/S0167865520302981>
 
-Random Forest: [sklearn.ensemble.RandomForestClassifier — scikit-learn 1.2.2 documentation](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
+* Random Forest: [sklearn.ensemble.RandomForestClassifier — scikit-learn 1.2.2 documentation](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
 
-[Understanding Random Forest. How the Algorithm Works and Why it Is… | by Tony Yiu | Towards Data Science ](https://towardsdatascience.com/understanding-random-forest-58381e0602d2)Convolutional Neural Network: [Convolutional Neural Network (CNN) | TensorFlow Core](https://www.tensorflow.org/tutorials/images/cnn)
+* [Understanding Random Forest. How the Algorithm Works and Why it Is… | by Tony Yiu | Towards Data Science ](https://towardsdatascience.com/understanding-random-forest-58381e0602d2)Convolutional Neural Network: 
 
-Residual Neural Network: [ResNet | PyTorch](https://pytorch.org/hub/pytorch_vision_resnet/)
+* [Convolutional Neural Network (CNN) | TensorFlow Core](https://www.tensorflow.org/tutorials/images/cnn)
 
-[\[1512.03385\] Deep Residual Learning for Image Recognition (arxiv.org)](https://arxiv.org/abs/1512.03385)
+* Residual Neural Network: [ResNet | PyTorch](https://pytorch.org/hub/pytorch_vision_resnet/)
 
-[Deep Residual Learning for Image Recognition (cv-foundation.org)](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
+* [\[1512.03385\] Deep Residual Learning for Image Recognition (arxiv.org)](https://arxiv.org/abs/1512.03385)
+
+* [Deep Residual Learning for Image Recognition (cv-foundation.org)](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
+
+
+### Written by:
+* Marcus Tang Xin Kye (A0217934Y) 
+* Taufiq Bin Abdul Rahman(A0218081L) 
+* Tay Yan Han (A0216335L)
+* Ong Jun Xiong (A0214943E)
+* See Jian Hui (A0217701N) 
+* Madhan Selvapandian (A0218446B)
+
+
